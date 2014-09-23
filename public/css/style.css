@@ -1,0 +1,49 @@
+body { padding-top:30px; }
+h1 {
+	text-align: center;
+	padding-bottom: 15px;
+}
+table,th {
+	text-align: center;
+}
+.game {
+	text-align: center;
+}
+h1.game-over-banner {
+	color: red;
+	position: absolute;
+	top: 0px;
+	left: 70px;
+}
+.navbar-nav li.selected a {
+	color: #fff;
+}
+.lastHand {
+	float: right;
+}
+.btn-block {
+	margin-top: 15px;
+}
+.card {
+	height: 200px;
+}
+.last-hand-card {
+	height:75px;
+}
+.hand {
+	text-align: center;
+}
+.game-buttons {
+	text-align: center;
+	padding-top: 15px;
+}
+.correct {
+	color: green;
+}
+.wrong {
+	color: red;
+}
+/*.btn {
+	color:red;
+	border: 2px solid red;
+}*/

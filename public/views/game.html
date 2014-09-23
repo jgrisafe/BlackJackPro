@@ -1,0 +1,44 @@
+<div class="jumbotron game">
+	<div class = row>
+		<div class = "col-md-3">
+			<h2>Last Hand</h2>
+			<div class="hand">
+				<h3>Dealer</h3>
+				<img class="last-hand-card" src="img/cards/cardBack.png">
+				<img class="last-hand-card" src="{{getCardUrl(lastHand.dealerCard)}}">
+			</div>
+			<div class="hand">
+				<h3>You</h3>
+				<img class="last-hand-card" src="{{getCardUrl(lastHand.userCard1)}}">
+				<img class="last-hand-card" src="{{getCardUrl(lastHand.userCard2)}}">
+			</div>
+			<h3>Correct Guess: <span ng-class="{correct: lastHandCorrect, wrong: !lastHandCorrect}">{{ getCorrectGuessString(lastHand.correctGuess) }} </h3>
+		</div>
+		<div class = "col-md-6">
+			<div class="hand">
+				<h2>Dealer</h2>
+				<img class="card" src="img/cards/cardBack.png">
+				<img class="card" src="{{getCardUrl(dealerFaceUpCard)}}">
+			</div>
+			<div class="hand">
+				<h2>You</h2>
+				<img class="card" src="{{getCardUrl(userCard1)}}">
+				<img class="card" src="{{getCardUrl(userCard2)}}">
+			</div>
+			<div  ng-show="!gameOver" class="game-buttons">
+				<button class="btn btn-success btn-lg" ng-click="userGuess('H')" >Hit</button>
+				<button class="btn btn-danger btn-lg" ng-click="userGuess('S')">Stay</button>
+				<button class="btn btn-primary btn-lg" ng-click="userGuess('D')">Double</button>
+				<button class="btn btn-warning btn-lg" ng-click="userGuess('SP')">Split</button>
+			</div>
+			<button ng-show="gameOver" class="btn btn-primary btn-block" ng-click="submitScore()">Submit score!</button>
+		</div>
+		<div class = "col-md-3">
+			<h2>Score</h2>
+			<p>Correct: {{correct}}</p>
+			<p>Wrong: {{wrong}}</p>
+			<p>Total: {{score}}</p>
+		</div>
+		<button class="btn btn-primary btn-lg" ng-click="init()" ng-show="gameOver">New Game</button>
+		</div> <!-- end row -->
+	</div>
